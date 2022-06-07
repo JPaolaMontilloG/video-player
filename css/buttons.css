@@ -1,0 +1,32 @@
+.button {
+    /*border: 10px solid green;*/
+    inline-size: 32px; /*Ancho del botón*/
+    block-size: 32px; /*Alto del botón*/
+    border: none;
+    background-color: transparent; /*transparent, unset, initial*/
+    /*border: 1px solid red;*/
+    background-repeat: no-repeat; /*No se duplica la imagen*/
+    background-position: center;
+    cursor: pointer; /*Aparece la mano sobre los botones*/
+}
+
+.button:active {
+    transform: scale(.9); /*Cambia el tamaño del botón al hacer clic en un 90 %. Si se deja 1, corresponde al 100 % del tamaño del botón*/
+}
+
+#play {
+    background-image: url('../images/play.svg');
+    /*border: 10px solid blue;*/
+}
+
+#pause {
+    background-image: url('../images/pause.svg');
+}
+
+#backward {
+    background-image: url('../images/-10.svg');
+}
+
+#forward {
+    background-image: url('../images/+10.svg');
+}

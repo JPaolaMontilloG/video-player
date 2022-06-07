@@ -1,0 +1,79 @@
+@import './buttons.css';
+
+body {
+    background-color: #26B4BC;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.wrapper {
+    max-inline-size: 900px;
+    margin: auto;
+}
+
+.player {
+    margin-block-start: 100px;
+    /*border: 10px solid red;*/
+    position: relative;
+}
+
+.player video {
+    inline-size: 100%; /*El tamaño se adapta al ancho de la pantalla --> Responsive*/
+    /*border: 10px solid blueviolet;*/
+    /*margin-block-start: 100px;*/
+    aspect-ratio: 16/9; /*Para que el video no se vea con saltos*/
+    vertical-align: middle;  /*Para centrar el video verticalmente*/
+    object-fit: cover; /*Se expande el objeto para llenar la proporción utilizada*/
+}
+
+.player-title {
+    color: white; /*Propiedad para dar color a los textos*/
+    position: absolute;
+    inset-block-start: 0;  /*Block para eje y*/
+    inset-inline-start: 20px;  /*Inline para eje x*/
+    /*inset-block-start: 50px;  /*Propiedad para modelo lógico
+    margin: 0;*/
+}
+
+.player-actions {
+    position: absolute;
+    /*inset: para elementos absolutos, se coloca en 0 para que estire*/
+    inset: 0;  /*Para centrar: debe tener el mismo tamaño del padre para que se expanda a lo ancho y alto del padre*/
+    /* inset: 0; es equivalente a:
+    inset-block-end: 0;
+    inset-block-start: 0;
+    inset-inline-end: 0;
+    inset-inline-start: 0;  Coordenadas top, left, right y bottom en 0*/
+    /*inset-block-start: 50px;*/
+    /*border: 10px solid blue;*/
+    display: flex;  /*En un contexto flexible las propiedades se pueden aplicar a los hijos, como: */
+    justify-content: center; /*Alinear en el eje principal (x)*/
+    align-items: center; /*Alinear en el eje transversal (y)*/
+    gap: 20px; /*Para separar los botones*/
+    /*z-index: 2;*/ /*Para llevar los controles adelante y que funcionen o colocar el video antes del h2 en el HTML*/
+}
+
+.player-progress {
+    /*background: yellow;*/
+    position: absolute;  /*Para que esté encima del video*/
+    inset-block-end: 0; /*Para ubicarla en la parte inferior del video*/
+    inset-inline: 0;  /*Para que se expanda todo lo posible*/
+    display: flex;
+    padding: 10px;
+}
+
+/*Para que la barra tome todo el ancho del video*/
+.player-progress input {
+    flex: 1;
+}
+
+.player-overlay {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: .3s opacity;
+}
+
+.player:hover .player-overlay {
+    /*border: 10px solid red;*/
+    opacity: 1;
+}

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8"> <!--Caracteres especiales-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!--Compatibilidad del navegador-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!--Responsive design-->
+    <link rel="stylesheet" href="./css/styles.css">
+    <title>Video Player</title>
+</head>
+<body>
+    <!--<h1>¡Hola, JennyPa!</h1>
+    <h2>Subtítulo</h2>
+    <p>¡Hola, Jenny!</p>
+    <p>¡Hola, Paola!</p> -->
+    <div class="wrapper"> <!--Encapsulador-->
+        <div class="player">
+            <video id="video" poster="./images/poster.jpg" muted src="./videos/lofi.mp4" width="400"></video>
+            <div class="player-overlay">
+                <h2 class="player-title">Música para programar</h2>
+                <div class="player-actions">
+                    <button class="button" id="backward" aria-label="Retroceder 10 segundos" title="Retroceder 10 segundos"></button> <!--aria-label: nombre para accesibilidad-->
+                    <button class="button" id="play" aria-label="Reproducir" title="Reproducir"></button> <!--id: Elemento único por página, para hacer algo particular, para cada botón-->
+                    <button class="button" hidden id="pause" aria-label="Pausar" title="Pausar"></button>
+                    <button class="button" id="forward" aria-label="Adelantar 10 segundos" title="Adelantar 10 segundos"></button>
+                </div>
+                <div class="player-progress">
+                    <input id="progress" type="range" min="0" value="0" step="1">
+                </div>
+                <!--<video id="video" poster="./images/poster.jpg" autoplay controls muted src="./videos/lofi.mp4" width="400"></video>
+                    Atributos: autoplay: para que se reproduzca automáticamente, controls: agrega los controles al video, muted: sin sonido-->
+            </div>
+        </div>
+    </div>
+
+    <script src="./js/index.js"></script>
+</body>
+</html>
